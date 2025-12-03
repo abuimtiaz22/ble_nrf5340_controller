@@ -1,0 +1,25 @@
+# VS Code
+.vscode/
+
+# Build folders (Zephyr / nRF)
+build/
+build-* /
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+*.map
+*.bin
+*.hex
+*.elf
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# MATLAB
+*.asv
+
+# Other junk
+*.tmp
+*.swp

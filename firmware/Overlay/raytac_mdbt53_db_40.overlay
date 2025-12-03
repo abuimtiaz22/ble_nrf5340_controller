@@ -1,0 +1,118 @@
+/ {
+    aliases {
+        rst = &rst;
+        rst-ctr = &rst_ctr;
+        enbias = &enbias;
+        stab = &stab;
+	clk-wrd = &clk_wrd;
+        in-wrd = &in_wrd;
+	pulse = &pulse;
+        rst-tdc = &rst_tdc;
+
+
+       tx0 = &tx0;
+        tx1 = &tx1;
+        tx2 = &tx2;
+        tx3 = &tx3;
+        tx4 = &tx4;
+        tx5 = &tx5;
+        tx6 = &tx6;
+        tx7 = &tx7;
+        tx8 = &tx8;
+        tx9 = &tx9;
+        tx10 = &tx10;
+        tx11 = &tx11;
+        tx12 = &tx12;
+        tx13 = &tx13;
+        cell = &cell;
+        clk-shift = &clk_shift;
+
+      
+        
+    };
+};
+&uart1 {
+    status = "disabled";
+};
+
+&uart0 {
+    status = "disabled";
+};
+
+
+&usbd {
+    status = "disabled";
+};
+
+&usbd {
+    status = "disabled";
+};
+
+&nfct {
+    status = "disabled";
+};
+
+&gpio_fwd {
+    status = "disabled";
+};
+
+
+    / {
+        my_gpio_output {
+            compatible = "gpio-leds";
+            rst: rst {
+                gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
+                label = "Reset";
+            };
+            rst_ctr: rst_ctr{
+                gpios = <&gpio0 18 GPIO_ACTIVE_HIGH>;
+                label = "Reset Counter";
+            };
+            enbias: enbias{
+                gpios = <&gpio0 30 GPIO_ACTIVE_HIGH>;
+                label = "Bias Enable";
+            };
+            stab: stab{
+                gpios = <&gpio1 00 GPIO_ACTIVE_HIGH>;
+                label = "Stability";
+            };
+
+
+           in_wrd: in_wrd {
+                gpios = <&gpio1 12 GPIO_ACTIVE_HIGH>;
+                label = "Data Output";
+            };
+            clk_wrd: clk_wrd{
+                gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
+                label = "Data Output";
+            };
+
+             rst_tdc: rst_tdc {
+                gpios = <&gpio1 11 GPIO_ACTIVE_HIGH>;
+                label = "Reset TDC";
+            };
+            pulse: pulse{
+                gpios = <&gpio1 13 GPIO_ACTIVE_HIGH>;
+                label = "Pulse";
+            };
+
+    tx0: tx0 { gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>; label = "TX0"; };
+    tx1: tx1 { gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>; label = "TX1"; };
+    tx2: tx2 { gpios = <&gpio0 16 GPIO_ACTIVE_HIGH>; label = "TX2"; };
+    tx3: tx3 { gpios = <&gpio0 17 GPIO_ACTIVE_HIGH>; label = "TX3"; };
+    tx4: tx4 { gpios = <&gpio0 22 GPIO_ACTIVE_HIGH>; label = "TX4"; };
+    tx5: tx5 { gpios = <&gpio0 28 GPIO_ACTIVE_HIGH>; label = "TX5"; };
+    tx6: tx6 { gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>; label = "TX6"; };
+    tx7: tx7 { gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>; label = "TX7"; };
+    tx8: tx8 { gpios = <&gpio1 5 GPIO_ACTIVE_HIGH>; label = "TX8"; };
+    tx9: tx9 { gpios = <&gpio0 19 GPIO_ACTIVE_HIGH>; label = "TX9"; };
+    tx10: tx10 { gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>; label = "TX10"; };
+    tx11: tx11 { gpios = <&gpio0 24 GPIO_ACTIVE_HIGH>; label = "TX11"; };
+    tx12: tx12 { gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>; label = "TX12"; };
+    tx13: tx13 { gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>; label = "TX13"; };
+       
+
+    cell: cell { gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>; label = "Cell Control"; };
+    clk_shift: clk_shift { gpios = <&gpio1 14 GPIO_ACTIVE_HIGH>; label = "Clock Shift"; };
+        };
+    };
